@@ -94,6 +94,8 @@ class GameEvaluator:
         pass
     def check_straight(self):
         pass
+    def check_full_house(self):
+        pass
     def check_straight_flush(self):
         pass
     def check_royal_flush(self):
