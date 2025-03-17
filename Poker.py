@@ -54,6 +54,7 @@ class Card:
 class Game:
     def __init__(self):
         self.deck = Deck()
+        self.board = Board()
         pass
     def start(self):
         try:
@@ -62,19 +63,29 @@ class Game:
             print("Error occured")
 
     def flop(self, deck):
-        """burn card 5 before dealing the flop"""
-        print(deck[-6])
-        print(deck[-7])
-        print(deck[-8])
+        """burn card 5 before dealing the flop after dealing to both players"""
+        self.board.board.append(deck[-6])
+        self.board.board.append(deck[-7])
+        self.board.board.append(deck[-8])
         pass
     def turn(self, deck):
+        self.board.board.append(deck[-10])
         """burn card 9 before dealing the turn"""
-        print(deck[-10])
         pass
     def river(self, deck):
+        self.board.board.append(deck[-12])
         """burn card 11 before dealing the river"""
-        print(deck[-12])
         pass
+
+class Board:
+    def __init__(self):
+        self.board = []
+        pass
+    def print_board(self):
+        for card in self.board:
+            print(card, end=' ')
+        print("\n")
+
 class Bet:
     def __init__(self, bet):
         self.bet = bet
