@@ -1,11 +1,16 @@
 import numpy as np
-from Poker import Card, Player, Deck, Game,GameEvaluator, GTOEvaluator, Board
+from Poker import Player, Deck, Game,GameEvaluator, GTOEvaluator, Board, Dealer
 """Deck Methods"""
 deck = Deck()
 deck.fill_deck()
 deck.shuffle()
 
-deck.print_deck()
+"""deck.print_deck()"""
+
+player1 = Player()
+player2 = Player()
+
+dealer = Dealer()
 
 game = Game()
 board = Board()
@@ -15,6 +20,9 @@ gto_play = GTOEvaluator()
 try:
     """Experimentation to check that I can at least display the cards"""
     game.start()
+
+    dealer.deal(deck.deck, player1=player1, player2=player2)
+
     game.flop(deck=deck.deck)
     print("Current Board: ")
     game.board.print_board()

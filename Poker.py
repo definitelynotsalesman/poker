@@ -18,6 +18,10 @@ class Dealer:
             give player card i * -1. Make
             sure to handle burns as needed."""
         for i, card in enumerate(reversed(deck)):
+            if i % 2 == 0:
+                player1.hand.append(card)
+            else:
+                player2.hand.append(card)
             pass
         #add logic here
 
