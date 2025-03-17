@@ -23,6 +23,10 @@ try:
 
     dealer.deal(deck.deck, player1=player1, player2=player2)
 
+    player1.show()
+    print()
+    player2.show()
+
     game.flop(deck=deck.deck)
     print("Current Board: ")
     game.board.print_board()
