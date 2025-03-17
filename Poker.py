@@ -19,7 +19,8 @@ class Dealer:
 class Deck:
     def __init__(self):
         self.deck = []
-        self.card_values = np.array(["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"])
+        self.card_values = np.array(["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]) 
+        """get rid of this and define a stack class in future"""
         pass
     def fill_deck(self):
         for i in range(52):
@@ -71,3 +72,30 @@ class Game:
     def river(self, deck):
         print(deck[-11])
         pass
+class Bet:
+    def __init__(self, bet):
+        self.bet = bet
+        pass
+
+class GameEvaluator:
+    def __init__(self):
+        pass
+    def high_card(self):
+        pass
+    def check_pair(self):
+        pass
+    def check_two_pair(self):
+        pass
+    def check_set(self):
+        pass
+    def check_trips(self):
+        pass
+    def check_flush(self):
+        pass
+    def check_straight(self):
+        pass
+    def check_straight_flush(self):
+        pass
+    def check_royal_flush(self):
+        pass
+
