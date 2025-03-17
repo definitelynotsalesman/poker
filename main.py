@@ -1,5 +1,5 @@
 import numpy as np
-from Poker import Card, Player, Deck, Game,GameEvaluator
+from Poker import Card, Player, Deck, Game,GameEvaluator, GTOEvaluator
 """Deck Methods"""
 deck = Deck()
 deck.fill_deck()
@@ -7,6 +7,7 @@ deck.shuffle()
 
 game = Game()
 evaluator = GameEvaluator()
+gto_play = GTOEvaluator()
 
 try:
     """Experimentation to check that I can at least display the cards"""

@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 class Player:
     def __init__(self):
@@ -19,7 +20,7 @@ class Dealer:
 class Deck:
     def __init__(self):
         self.deck = []
-        self.card_values = np.array(["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]) 
+        self.card_values = [1,2,3,4,5,6,7,8,9,10,11,12,13]
         """get rid of this and define a stack class in future"""
         pass
     def fill_deck(self):
@@ -32,12 +33,11 @@ class Deck:
                 self.deck.append(Card("Club", self.card_values[i - 26]))
             elif i >= 39:
                 self.deck.append(Card("Diamond", self.card_values[i - 39]))
-        self.deck = np.array(self.deck)
     def print_deck(self):
         for element in self.deck:
             print(element)
     def shuffle(self):
-        np.random.shuffle(self.deck)
+        random.shuffle(self.deck)
         pass
 class Card:
     def __init__(self, suit, value):
@@ -62,15 +62,18 @@ class Game:
             print("Error occured")
 
     def flop(self, deck):
+        """burn card 5 before dealing the flop"""
         print(deck[-6])
         print(deck[-7])
         print(deck[-8])
         pass
     def turn(self, deck):
-        print(deck[-9])
+        """burn card 9 before dealing the turn"""
+        print(deck[-10])
         pass
     def river(self, deck):
-        print(deck[-11])
+        """burn card 11 before dealing the river"""
+        print(deck[-12])
         pass
 class Bet:
     def __init__(self, bet):
@@ -101,3 +104,16 @@ class GameEvaluator:
     def check_royal_flush(self):
         pass
 
+"""Three different classes of play preflop for the artificial player, able to be determined at runtime. """
+
+class GTOEvaluator:
+    def __init__(self):
+        pass
+
+class GTO_Aggresive:
+    def __init__(self):
+        pass
+
+class GTO_Tight:
+    def __init__(self):
+        pass
