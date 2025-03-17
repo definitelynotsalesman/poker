@@ -1,17 +1,17 @@
 import numpy as np
-from Poker import Card, Player, Deck
-
+from Poker import Card, Player, Deck, Game
 """Deck Methods"""
 deck = Deck()
 deck.fill_deck()
 deck.shuffle()
 
+game = Game()
+
 try:
-    player_list = []
-    num_players = int(input("Input the number of players (1-5)"))
-    for player in range(num_players):
-        player_list.append(Player)
-        pass
+    game.start()
+    game.flop(deck=deck.deck)
+    game.turn(deck=deck.deck)
+    game.river(deck=deck.deck)
 
 except:
     print("Please enter a valid number")

@@ -1,5 +1,4 @@
 import numpy as np
-from Poker import Card
 
 class Player:
     def __init__(self):
@@ -8,7 +7,15 @@ class Player:
     def show(self):
         for card in self.hand:
             print(card)
-    
+
+class Dealer:
+    def __init__(self):
+        pass
+    def deal(self):
+        """for i, card in deck:
+            give player card i * -1. Make
+            sure to handle burns as needed."""
+
 class Deck:
     def __init__(self):
         self.deck = []
@@ -16,7 +23,7 @@ class Deck:
         pass
     def fill_deck(self):
         for i in range(52):
-            if i <= 12:
+            if i <= 12: 
                 self.deck.append(Card("Heart", self.card_values[i]))
             elif i >= 13 and i <= 25:
                 self.deck.append(Card("Spade", self.card_values[i - 13]))
@@ -31,12 +38,6 @@ class Deck:
     def shuffle(self):
         np.random.shuffle(self.deck)
         pass
-    def flop(self):
-        pass
-    def turn():
-        pass
-    def river():
-        pass
 class Card:
     def __init__(self, suit, value):
         self.suit = suit
@@ -48,3 +49,25 @@ class Card:
         return suit
     def getValue(self, value):
         return value
+    
+class Game:
+    def __init__(self):
+        self.deck = Deck()
+        pass
+    def start(self):
+        try:
+            print("Welcome to the Poker Simulator.")
+        except:
+            print("Error occured")
+
+    def flop(self, deck):
+        print(deck[-6])
+        print(deck[-7])
+        print(deck[-8])
+        pass
+    def turn(self, deck):
+        print(deck[-9])
+        pass
+    def river(self, deck):
+        print(deck[-11])
+        pass
