@@ -4,6 +4,7 @@ import random
 class Player:
     def __init__(self):
         self.hand = []
+        self.buy_in = 0
     
     def show(self):
         for card in self.hand:
@@ -12,10 +13,13 @@ class Player:
 class Dealer:
     def __init__(self):
         pass
-    def deal(self):
+    def deal(self, deck, player1, player2):
         """for i, card in deck:
             give player card i * -1. Make
             sure to handle burns as needed."""
+        for i, card in enumerate(reversed(deck)):
+            pass
+        #add logic here
 
 class Deck:
     def __init__(self):
@@ -26,13 +30,13 @@ class Deck:
     def fill_deck(self):
         for i in range(52):
             if i <= 12: 
-                self.deck.append(Card("Heart", self.card_values[i]))
+                self.deck.append(Card("♥", self.card_values[i]))
             elif i >= 13 and i <= 25:
-                self.deck.append(Card("Spade", self.card_values[i - 13]))
+                self.deck.append(Card("♠", self.card_values[i - 13]))
             elif i >= 26 and i <= 38:
-                self.deck.append(Card("Club", self.card_values[i - 26]))
+                self.deck.append(Card("♣", self.card_values[i - 26]))
             elif i >= 39:
-                self.deck.append(Card("Diamond", self.card_values[i - 39]))
+                self.deck.append(Card("♦", self.card_values[i - 39]))
     def print_deck(self):
         for element in self.deck:
             print(element)
@@ -44,7 +48,7 @@ class Card:
         self.suit = suit
         self.value = value
     def __str__(self):
-        return f"{self.value} of {self.suit}s"
+        return f"{self.value}{self.suit}"
 
     def getSuit(self, suit):
         return suit
@@ -93,6 +97,8 @@ class Bet:
 
 class GameEvaluator:
     def __init__(self):
+        self.hand = Player()
+        self.board = Board()
         pass
     def high_card(self):
         pass
