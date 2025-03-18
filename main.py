@@ -22,10 +22,10 @@ try:
     game.start()
 
     dealer.deal(deck.deck, player1=player1, player2=player2)
-
+    print("Your Hand:")
     player1.show()
     print()
-    player2.show()
+    #player2.show() hidden hand
 
     game.flop(deck=deck.deck)
     print("Current Board: ")
@@ -37,6 +37,8 @@ try:
     game.river(deck=deck.deck)
 
     game.board.print_board()
+
+    player2.show()
 
 except:
     print("Please enter a valid number")

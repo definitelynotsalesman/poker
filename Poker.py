@@ -8,7 +8,7 @@ class Player:
     
     def show(self):
         for card in self.hand:
-            print(card)
+            print(card, end=' ')
 
 class Dealer:
     def __init__(self):
@@ -54,6 +54,7 @@ class Card:
         self.suit = suit
         self.value = value
     def __str__(self):
+        lookup_table = {}
         return f"{self.value}{self.suit}"
 
     def getSuit(self, suit):
