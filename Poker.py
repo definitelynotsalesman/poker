@@ -106,10 +106,14 @@ class GameEvaluator:
     def __init__(self):
         self.hand = Player()
         self.board = Board()
+        """7 Card Hand that will be evaluated for various features"""
+        self.evaluate_board = self.hand.hand + self.board.board 
         pass
     def high_card(self):
-        pass
+        high_card_value = max(self.evaluate_board, key=lambda card: card.value)
+        return high_card_value
     def check_pair(self):
+        
         pass
     def check_two_pair(self):
         pass
