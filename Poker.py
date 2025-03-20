@@ -22,7 +22,7 @@ class Dealer:
                 break
             if i % 2 == 0:
                 player1.hand.append(card)
-            else:
+            else:   
                 player2.hand.append(card)
             pass
         #add logic here
@@ -54,6 +54,7 @@ class Card:
         self.suit = suit
         self.value = value
     def __str__(self):
+        """add logic to convert face cards"""
         lookup_table = {}
         return f"{self.value}{self.suit}"
 
@@ -113,7 +114,8 @@ class GameEvaluator:
         high_card_value = max(self.evaluate_board, key=lambda card: card.value)
         return high_card_value
     def check_pair(self):
-        
+        for card in self.hand.hand:
+            pass
         pass
     def check_two_pair(self):
         pass
@@ -136,6 +138,10 @@ class GameEvaluator:
 
 class GTOEvaluator:
     def __init__(self):
+        pass
+    def play_preflop(self):
+        random_prob = random.random()
+        
         pass
 
 class GTO_Aggresive:
